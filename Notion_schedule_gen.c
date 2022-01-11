@@ -59,7 +59,7 @@ void create_csv(char* class,  char* start, char* end, int weekdays) {
 
     while(strcmp(start,end) <= 0) { // while start < end
         //TODO: comparition fails when 12<3
-        sprintf(name, "Lecture %d", i); //TODO: change the format of name when needed
+        sprintf(name, "Lec %d", i); //TODO: change the format of name when needed
         offset = 1;
         switch (weekdays) {
             case 13:
@@ -136,12 +136,25 @@ void create_csv(char* class,  char* start, char* end, int weekdays) {
 //     return -1;
 // }
 
+void printMenu() {
+
+    puts("+------ SCHEDULER ------+\n"
+        "|  1. New Event         |\n"
+        "|  2. Delete Event      |\n"
+        "|  3. Display Schedule  |\n"
+        "|  4. Save Schedule     |\n"
+        "|  5. Load Schedule     |\n"
+        "|  6. Exit              |\n"
+        "+-----------------------+\n");
+
+}
+
 
 int main() {
     char class[20], start[20], end[20], nextDate[11];
     int startDay, weekdays;
 
-    printf("\n== Enter the following info ==\nClass name [ABCD 101]:\n");
+    printf("\n== Enter info to generate schedule ==\nClass name [ABCD 101]:\n");
     scanf("%[^\n]", class);
 
     printf("Start date [mm/dd/yyyy]:\n");
