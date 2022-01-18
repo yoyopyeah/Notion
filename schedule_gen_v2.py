@@ -22,7 +22,7 @@ def main():
         header = f.readline().split(',')
         print(header)
 
-    f = open('notion_schedule.csv', 'a')
+    f = open('notion_schedule.csv', 'w')
     writer = csv.writer(f)
     writer.writerow(header)
 
